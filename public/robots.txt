@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dos3.ai/sitemap.xml

@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  
+  body {
+    background-color: #04050F;
+    color: #F4F7FF;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sora', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-dos-cyan via-dos-azure to-dos-violet;
+  }
+
+  .text-gradient-subtle {
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-white via-dos-cloud to-dos-mist;
+  }
+
+  .glass-card {
+    background: linear-gradient(180deg, rgba(11, 19, 57, 0.6) 0%, rgba(7, 12, 38, 0.8) 100%);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(47, 107, 255, 0.16);
+  }
+
+  .glass-card:hover {
+    border-color: rgba(34, 230, 255, 0.35);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6), 0 0 20px -5px rgba(47, 107, 255, 0.2);
+  }
+
+  .glass-nav {
+    background: rgba(4, 5, 15, 0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(47, 107, 255, 0.12);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #04050F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #101B4E;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2F6BFF;
+}

@@ -1,0 +1,29 @@
+# DOS3.AI
+
+> Building Intelligent Technology for a Connected World.
+
+DOS3.AI is an independent technology company based in Dallas, Texas, USA. It explores the intersection of software engineering, operational data, operating systems, servers, digital infrastructure, digital services, and artificial intelligence.
+
+## Name Meaning
+- **D** — Data: The foundation for intelligent software, systems, analytics, and decision-making.
+- **OS** — Operating Systems: The software environment that powers and manages computing systems and applications.
+- **3** — Servers & Services: Representing connected infrastructure of servers and digital services across cloud and on-premises environments.
+- **AI** — Artificial Intelligence: Intelligence integrated into software, infrastructure, automation, and user-facing services.
+
+## Core Architectural Focus Areas
+1. **Data & Intelligence**: Knowledge graphs, context-aware information retrieval, and verifiable data lineage.
+2. **Software & Systems**: Resilient distributed systems architecture, type-safe contract interfaces, and modular runtimes.
+3. **Computing Infrastructure**: Hybrid cloud fabrics, low-latency workload orchestration, and hardware-isolated execution enclaves.
+4. **Digital Services**: Secure API governance, event-driven streaming, and service-oriented integration.
+5. **Artificial Intelligence**: Grounded task planning, deterministic verification harnesses, and responsible human-in-the-loop oversight.
+
+## Engineering Principles
+- **Clarity Before Complexity**: Practical architectures prioritized over gratuitous novelty.
+- **Systems That Work Together**: Reliable, maintainable, and tightly integrated software components.
+- **Responsible Innovation**: Rigorous security, data minimization, and evidence-grounded performance.
+
+## Verified Contact
+- Website: https://dos3.ai/
+- Location: Dallas, Texas, USA
+- Inquiries: hello@dos3.ai.com, contact@dos3.ai.com
+- Security: security@dos3.ai.com
