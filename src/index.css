@@ -47,11 +47,17 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-dos-cyan via-dos-azure to-dos-violet;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, #22E6FF, #2F6BFF, #9B4DFF);
   }
 
   .text-gradient-subtle {
-    @apply bg-clip-text text-transparent bg-gradient-to-b from-white via-dos-cloud to-dos-mist;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to bottom, #FFFFFF, #F4F7FF, #94A3B8);
   }
 
   .glass-card {
