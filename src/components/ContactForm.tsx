@@ -121,7 +121,7 @@ export const ContactForm: React.FC = () => {
                 type="text"
                 value={formData.fullName}
                 onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                className={`w-full px-4 py-3 rounded-xl bg-dos-surface/90 border text-white text-sm focus:outline-none focus:ring-2 focus:ring-dos-cyan transition-all placeholder:text-dos-mist/40 ${
+                className={`w-full px-4 py-3 rounded-xl bg-dos-surface/90 border text-white text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-dos-cyan transition-all placeholder:text-dos-mist/40 ${
                   errors.fullName ? 'border-red-500/80 focus:ring-red-500' : 'border-dos-border/60 hover:border-dos-cyan/30'
                 }`}
                 placeholder="Ada Lovelace"
@@ -147,7 +147,7 @@ export const ContactForm: React.FC = () => {
                 type="email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className={`w-full px-4 py-3 rounded-xl bg-dos-surface/90 border text-white text-sm focus:outline-none focus:ring-2 focus:ring-dos-cyan transition-all placeholder:text-dos-mist/40 ${
+                className={`w-full px-4 py-3 rounded-xl bg-dos-surface/90 border text-white text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-dos-cyan transition-all placeholder:text-dos-mist/40 ${
                   errors.email ? 'border-red-500/80 focus:ring-red-500' : 'border-dos-border/60 hover:border-dos-cyan/30'
                 }`}
                 placeholder="ada@organization.com"
@@ -175,7 +175,7 @@ export const ContactForm: React.FC = () => {
                 type="text"
                 value={formData.organization}
                 onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-dos-surface/90 border border-dos-border/60 hover:border-dos-cyan/30 text-white text-sm focus:outline-none focus:ring-2 focus:ring-dos-cyan transition-all placeholder:text-dos-mist/40"
+                className="w-full px-4 py-3 rounded-xl bg-dos-surface/90 border border-dos-border/60 hover:border-dos-cyan/30 text-white text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-dos-cyan transition-all placeholder:text-dos-mist/40"
                 placeholder="Company or Research Lab"
                 disabled={isSubmitting}
               />
@@ -190,7 +190,7 @@ export const ContactForm: React.FC = () => {
                 id="subject"
                 value={formData.subject}
                 onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-dos-surface/90 border border-dos-border/60 hover:border-dos-cyan/30 text-white text-sm focus:outline-none focus:ring-2 focus:ring-dos-cyan transition-all cursor-pointer"
+                className="w-full px-4 py-3 rounded-xl bg-dos-surface/90 border border-dos-border/60 hover:border-dos-cyan/30 text-white text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-dos-cyan transition-all cursor-pointer"
                 disabled={isSubmitting}
               >
                 <option value="General Inquiry" className="bg-dos-midnight text-white">General Inquiry</option>
@@ -211,7 +211,7 @@ export const ContactForm: React.FC = () => {
               rows={5}
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className={`w-full px-4 py-3 rounded-xl bg-dos-surface/90 border text-white text-sm focus:outline-none focus:ring-2 focus:ring-dos-cyan transition-all placeholder:text-dos-mist/40 resize-y ${
+              className={`w-full px-4 py-3 rounded-xl bg-dos-surface/90 border text-white text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-dos-cyan transition-all placeholder:text-dos-mist/40 resize-y ${
                 errors.message ? 'border-red-500/80 focus:ring-red-500' : 'border-dos-border/60 hover:border-dos-cyan/30'
               }`}
               placeholder="Please describe your inquiry, topic of interest, or area of collaboration..."

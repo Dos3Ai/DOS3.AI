@@ -23,7 +23,8 @@ DOS3.AI is an independent technology company based in Dallas, Texas, USA. It exp
 - **Responsible Innovation**: Rigorous security, data minimization, and evidence-grounded performance.
 
 ## Verified Contact
-- Website: https://dos3.ai/
+- Hosted Website: https://dos-3-ai.vercel.app/
+- Primary Domain: https://dos3.ai/
 - Location: Dallas, Texas, USA
 - Inquiries: hello@dos3.ai.com, contact@dos3.ai.com
 - Security: security@dos3.ai.com

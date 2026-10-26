@@ -1,63 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Active Vercel Hosted Endpoints -->
   <url>
-    <loc>https://dos3.ai/</loc>
+    <loc>https://dos-3-ai.vercel.app/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://dos3.ai/about</loc>
+    <loc>https://dos-3-ai.vercel.app/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dos3.ai/technology</loc>
+    <loc>https://dos-3-ai.vercel.app/technology</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://dos3.ai/solutions</loc>
+    <loc>https://dos-3-ai.vercel.app/solutions</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dos3.ai/research</loc>
+    <loc>https://dos-3-ai.vercel.app/research</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dos3.ai/pricing</loc>
+    <loc>https://dos-3-ai.vercel.app/pricing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dos3.ai/security</loc>
+    <loc>https://dos-3-ai.vercel.app/security</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dos3.ai/responsible-ai</loc>
+    <loc>https://dos-3-ai.vercel.app/responsible-ai</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dos3.ai/contact</loc>
+    <loc>https://dos-3-ai.vercel.app/contact</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dos3.ai/privacy</loc>
-    <changefreq>yearly</changefreq>
+    <loc>https://dos-3-ai.vercel.app/privacy</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://dos3.ai/terms</loc>
-    <changefreq>yearly</changefreq>
+    <loc>https://dos-3-ai.vercel.app/terms</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://dos3.ai/accessibility</loc>
-    <changefreq>yearly</changefreq>
+    <loc>https://dos-3-ai.vercel.app/accessibility</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 </urlset>

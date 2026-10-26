@@ -161,11 +161,12 @@ for step in plan.stream_steps():
             DOS3.AI explores the intersection of software, data, computing systems, digital infrastructure, and artificial intelligence to help shape the next generation of technology.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
             <Button
               to="/technology"
               variant="primary"
               size="lg"
+              className="w-full sm:w-auto justify-center"
               icon={<ArrowRight className="w-5 h-5" />}
             >
               Explore Our Technology
@@ -174,6 +175,7 @@ for step in plan.stream_steps():
               to="/contact"
               variant="secondary"
               size="lg"
+              className="w-full sm:w-auto justify-center"
             >
               Connect With Us
             </Button>
@@ -182,23 +184,23 @@ for step in plan.stream_steps():
       </section>
 
       {/* 2. PROOF STRIP / RESEARCH FOCUS (Playbook Section 3) */}
-      <section className="py-8 border-y border-dos-border/30 bg-dos-midnight/40 backdrop-blur-md relative z-10">
+      <section className="py-6 sm:py-8 border-y border-dos-border/30 bg-dos-midnight/40 backdrop-blur-md relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center lg:justify-between gap-6 text-center text-xs font-mono text-dos-mist/70">
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-dos-cyan" />
+          <div className="grid grid-cols-2 lg:flex lg:flex-wrap items-center justify-center lg:justify-between gap-4 sm:gap-6 text-center text-xs font-mono text-dos-mist/70">
+            <div className="flex items-center justify-center lg:justify-start gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-dos-cyan shrink-0" />
               <span>Dallas, Texas Headquarters</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-dos-azure" />
+            <div className="flex items-center justify-center lg:justify-start gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-dos-azure shrink-0" />
               <span>WCAG 2.2 Level AA Accessible</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-dos-violet" />
+            <div className="flex items-center justify-center lg:justify-start gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-dos-violet shrink-0" />
               <span>ISO/IEC 42001 & NIST AI Alignment</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-dos-magenta" />
+            <div className="flex items-center justify-center lg:justify-start gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-dos-magenta shrink-0" />
               <span>Deterministic Verification Architecture</span>
             </div>
           </div>
@@ -322,7 +324,7 @@ for step in plan.stream_steps():
                   </p>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-dos-border/40 flex items-center justify-between">
+                <div className="pt-6 mt-6 border-t border-dos-border/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <span className="text-xs text-dos-mist/60">
                     Engineered for continuous multi-tier integration
                   </span>
@@ -568,11 +570,12 @@ for step in plan.stream_steps():
             Have an idea, a technical challenge, or an opportunity to collaborate? We'd like to hear from you.
           </p>
 
-          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
             <Button
               to="/contact"
               variant="primary"
               size="lg"
+              className="w-full sm:w-auto justify-center"
               icon={<ArrowRight className="w-5 h-5" />}
             >
               Get in Touch
@@ -581,6 +584,7 @@ for step in plan.stream_steps():
               to="/pricing"
               variant="secondary"
               size="lg"
+              className="w-full sm:w-auto justify-center"
             >
               View Engagement Models
             </Button>

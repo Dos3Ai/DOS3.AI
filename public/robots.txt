@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://dos-3-ai.vercel.app/sitemap.xml
 Sitemap: https://dos3.ai/sitemap.xml
