@@ -3,11 +3,13 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { CookieBanner } from './components/CookieBanner';
+import { ChatBot } from './components/ChatBot';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Technology } from './pages/Technology';
 import { Solutions } from './pages/Solutions';
 import { Research } from './pages/Research';
+import { Careers } from './pages/Careers';
 import { Pricing } from './pages/Pricing';
 import { Security } from './pages/Security';
 import { ResponsibleAI } from './pages/ResponsibleAI';
@@ -59,7 +61,7 @@ export const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen bg-dos-void text-dos-cloud">
+      <div className="flex flex-col min-h-screen bg-dos-void text-dos-cloud transition-colors duration-300">
         <Navbar />
         <main className="flex-grow">
           <Routes>
@@ -68,6 +70,7 @@ export const App: React.FC = () => {
             <Route path="/technology" element={<Technology />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/research" element={<Research />} />
+            <Route path="/careers" element={<Careers />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/security" element={<Security />} />
             <Route path="/responsible-ai" element={<ResponsibleAI />} />
@@ -80,6 +83,8 @@ export const App: React.FC = () => {
         </main>
         <Footer />
         <CookieBanner />
+        {/* Autonomous AI Agent ChatBot popping up on load (Requirement #3) */}
+        <ChatBot />
       </div>
     </Router>
   );

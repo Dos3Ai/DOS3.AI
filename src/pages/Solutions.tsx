@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { Briefcase, ArrowRight, Server, Shield, Database, Activity, Landmark, ShieldAlert, Cpu } from 'lucide-react';
+import { Briefcase, ArrowRight, Server, Shield, Database, Activity, Landmark, ShieldAlert, Cpu, Download, Calendar, ExternalLink } from 'lucide-react';
 import { Button } from '../components/Button';
 import { SectionHeading } from '../components/SectionHeading';
 import { TiltCard } from '../components/TiltCard';
+import { PreviousProjects } from '../components/PreviousProjects';
+import { BuildAgentCTA } from '../components/BuildAgentCTA';
+import { EXTERNAL_LINKS } from '../data/content';
 
 export const Solutions: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'persona' | 'industry'>('persona');
@@ -74,7 +77,7 @@ export const Solutions: React.FC = () => {
         </h1>
 
         <p className="max-w-3xl mx-auto text-lg text-dos-mist/85 leading-relaxed font-sans mb-8">
-          Explore how DOS3.AI addresses complex technical requirements across specific engineering personas and high-stakes operational sectors.
+          Explore how DOS3.AI addresses complex technical requirements across specific engineering personas, high-stakes operational sectors, and custom enterprise agent swarms.
         </p>
 
         {/* Tab Toggle */}
@@ -141,9 +144,15 @@ export const Solutions: React.FC = () => {
                 </div>
 
                 <div className="pt-6 mt-6 border-t border-dos-border/40">
-                  <Button to="/contact" variant="outline" size="sm" icon={<ArrowRight className="w-4 h-4" />}>
-                    Discuss Technical Requirements
-                  </Button>
+                  <a
+                    href={EXTERNAL_LINKS.bookingSchedule}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-dos-surface hover:bg-dos-surfaceHover border border-dos-border/70 text-xs font-semibold text-dos-mist hover:text-white transition-all"
+                  >
+                    <span>Discuss Architecture with Team</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-dos-cyan" />
+                  </a>
                 </div>
               </TiltCard>
             ))}
@@ -180,9 +189,15 @@ export const Solutions: React.FC = () => {
                 </div>
 
                 <div className="pt-6 mt-6 border-t border-dos-border/40">
-                  <Button to="/contact" variant="secondary" size="sm" icon={<ArrowRight className="w-4 h-4" />}>
-                    Explore Industry Feasibility
-                  </Button>
+                  <a
+                    href={EXTERNAL_LINKS.bookingSchedule}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-dos-surface hover:bg-dos-surfaceHover border border-dos-border/70 text-xs font-semibold text-dos-mist hover:text-white transition-all"
+                  >
+                    <span>Explore Industry Feasibility</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-dos-cyan" />
+                  </a>
                 </div>
               </TiltCard>
             ))}
@@ -190,18 +205,42 @@ export const Solutions: React.FC = () => {
         )}
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="glass-card rounded-2xl p-8 border border-dos-border/60 space-y-4">
-          <h2 className="text-2xl font-bold font-heading text-dos-cloud">
+      {/* Previous Projects Showcase in Solutions (Requirement #12) */}
+      <PreviousProjects />
+
+      {/* Build Own AI Agent & Custom MCP Server (Requirement #16) */}
+      <BuildAgentCTA />
+
+      {/* Meeting Discovery Box */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-16">
+        <div className="glass-card rounded-3xl p-8 sm:p-12 border border-dos-border/70 space-y-4 shadow-xl">
+          <span className="text-xs font-mono text-dos-cyan uppercase tracking-wider block">
+            Direct Engineering Engagement
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-bold font-heading text-dos-cloud">
             Have a Specific Architectural Challenge?
           </h2>
           <p className="text-sm text-dos-mist/80 max-w-xl mx-auto leading-relaxed">
-            Our engineering team consults directly with technical leaders to evaluate workload requirements, security constraints, and systems integration feasibility.
+            Our engineering leadership and 50+ researchers consult directly with CTOs and enterprise architects to evaluate workload requirements, security boundaries, and custom MCP integrations.
           </p>
-          <div className="pt-2">
-            <Button to="/contact" variant="primary" size="md">
-              Start a Conversation
-            </Button>
+          <div className="pt-3 flex flex-wrap items-center justify-center gap-3">
+            <a
+              href={EXTERNAL_LINKS.bookingSchedule}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-dos-cyan to-dos-azure text-black font-semibold text-xs tracking-wide uppercase hover:opacity-95 shadow-glow-cyan/25 flex items-center gap-2 transition-all"
+            >
+              <Calendar className="w-4 h-4" />
+              <span>Book 30-Min Architecture Discovery</span>
+            </a>
+            <a
+              href={EXTERNAL_LINKS.manualPdf}
+              download="DOS3AI_Architecture_Manual.pdf"
+              className="px-5 py-3 rounded-xl bg-dos-surface hover:bg-dos-surfaceHover border border-dos-cyan/40 text-dos-cyan text-xs font-semibold flex items-center gap-2 transition-all"
+            >
+              <Download className="w-4 h-4" />
+              <span>Download Architecture Manual</span>
+            </a>
           </div>
         </div>
       </div>

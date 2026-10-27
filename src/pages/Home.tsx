@@ -1,47 +1,63 @@
 import React, { useState } from 'react';
-import { ArrowRight, ShieldCheck, Cpu, Code2, Globe, Sparkles, Terminal, CheckCircle2, Copy, Check, Server, Database, Layers, ExternalLink, Zap } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Cpu, Code2, Globe, Sparkles, Terminal, CheckCircle2, Copy, Check, Server, Database, Layers, ExternalLink, Zap, ChevronDown, Download, MapPin, Calendar, Users } from 'lucide-react';
 import { Button } from '../components/Button';
 import { SectionHeading } from '../components/SectionHeading';
 import { ThreeCanvas } from '../components/ThreeCanvas';
 import { NetworkCanvas } from '../components/NetworkCanvas';
 import { TiltCard } from '../components/TiltCard';
-import { TECHNOLOGY_PILLARS, ENGINEERING_PRINCIPLES } from '../data/content';
+import { TechEcosystemLoop } from '../components/TechEcosystemLoop';
+import { PreviousProjects } from '../components/PreviousProjects';
+import { BuildAgentCTA } from '../components/BuildAgentCTA';
+import { PeopleSection } from '../components/PeopleSection';
+import { Newsletter } from '../components/Newsletter';
+import { TECHNOLOGY_PILLARS, ENGINEERING_PRINCIPLES, EXTERNAL_LINKS, COMPANY_STATS } from '../data/content';
 
 export const Home: React.FC = () => {
-  const [activeLayer, setActiveLayer] = useState<number>(0);
+  // Accordion state for 5-layer platform architecture (Requirement #4)
+  const [activeLayer, setActiveLayer] = useState<number | null>(0);
   const [codeLanguage, setCodeLanguage] = useState<'typescript' | 'python' | 'curl'>('typescript');
   const [copied, setCopied] = useState<boolean>(false);
 
   const layers = [
     {
+      id: 'data',
       name: 'Data',
-      subtitle: 'Layer 01 • The Semantic Foundation',
-      description: 'Knowledge graphs, streaming event verification, and verifiable context lineage that ensure reasoning systems operate on factual ground truth.',
-      specs: 'Knowledge Graph Ingestion • Semantic Context Repositories • Deterministic Data Lineage'
+      subtitle: 'LAYER 01 • THE SEMANTIC FOUNDATION',
+      description: 'Knowledge graphs, streaming event verification, and verifiable context lineage that ensure reasoning systems operate on factual ground truth rather than ungrounded assumptions.',
+      specs: 'Knowledge Graph Ingestion • Semantic Context Repositories • Deterministic Data Lineage',
+      deepDive: 'Ingests heterogeneous relational streams, vector representations, and operational event logs into a cryptographically verified context fabric.'
     },
     {
+      id: 'operating-systems',
       name: 'Operating Systems',
-      subtitle: 'Layer 02 • Resilient Execution',
-      description: 'Micro-kernel abstractions, memory-safe execution runtimes, and low-latency system-call interfaces tailored for high-concurrency tasks.',
-      specs: 'Memory-Safe Runtimes • Workload Sandboxing • Concurrency State Replication'
+      subtitle: 'LAYER 02 • RESILIENT EXECUTION',
+      description: 'Micro-kernel abstractions, memory-safe execution runtimes, and low-latency system-call interfaces tailored for high-concurrency autonomous agent tasks.',
+      specs: 'Memory-Safe Runtimes • Workload Sandboxing • Concurrency State Replication',
+      deepDive: 'Provides fault-tolerant isolation boundaries ensuring failing agent processes cannot compromise neighboring system states.'
     },
     {
+      id: 'servers',
       name: 'Servers',
-      subtitle: 'Layer 03 • Distributed Compute',
-      description: 'Elastic compute topology coordinating GPU/CPU clusters across localized edge nodes and hybrid cloud backends with strict tenant isolation.',
-      specs: 'Hardware-Enforced Enclaves • Dynamic GPU Allocation • Low-Latency Clustering'
+      subtitle: 'LAYER 03 • DISTRIBUTED COMPUTE',
+      description: 'Elastic compute topology coordinating GPU/CPU clusters across localized edge nodes and hybrid cloud backends with strict tenant isolation and sub-10ms latency.',
+      specs: 'Hardware-Enforced Enclaves • Dynamic GPU Allocation • Low-Latency InfiniBand',
+      deepDive: 'Orchestrates multi-node NVIDIA H100 GPU clusters, continuous batching, and distributed KV cache memory allocation via Slurm.'
     },
     {
+      id: 'services',
       name: 'Services',
-      subtitle: 'Layer 04 • Interoperable APIs',
-      description: 'Service-oriented contract interfaces, streaming event buses, and zero-trust permission gateways designed for seamless integration.',
-      specs: 'Declarative Contract APIs • Zero-Trust Gateways • Event-Driven Bus Architecture'
+      subtitle: 'LAYER 04 • INTEROPERABLE APIS',
+      description: 'Service-oriented contract interfaces, streaming event buses, and zero-trust permission gateways designed for seamless Model Context Protocol (MCP) tool calling.',
+      specs: 'Declarative Contract APIs • Zero-Trust Gateways • Event-Driven Bus Architecture',
+      deepDive: 'Exposes standardized MCP servers allowing foundation models to securely interact with enterprise databases and internal endpoints.'
     },
     {
+      id: 'artificial-intelligence',
       name: 'Artificial Intelligence',
-      subtitle: 'Layer 05 • Grounded Machine Reasoning',
-      description: 'Model-agnostic task orchestration, deterministic verification harnesses, and human-in-the-loop permission checkpoints.',
-      specs: 'Model-Agnostic Planners • Deterministic Safety Gates • Empirical Verification'
+      subtitle: 'LAYER 05 • GROUNDED MACHINE REASONING',
+      description: 'Model-agnostic task orchestration, deterministic verification harnesses, and human-in-the-loop permission checkpoints that prevent autonomous drift.',
+      specs: 'Model-Agnostic Planners • Deterministic Safety Gates • Empirical Verification',
+      deepDive: 'Enforces mathematical guardrails ensuring autonomous multi-step reasoning plans cannot execute unverified side-effects.'
     }
   ];
 
@@ -134,33 +150,61 @@ for step in plan.stream_steps():
 
   return (
     <div className="relative overflow-hidden pt-20">
-      {/* 1. HERO SECTION WITH 3D CANVAS & 2D NETWORK */}
-      <section className="relative min-h-[92vh] flex items-center justify-center pt-16 pb-24 lg:pt-24 lg:pb-32">
-        {/* Interactive 3D WebGL Core */}
-        <ThreeCanvas className="opacity-70" />
+      {/* 1. HERO SECTION (Requirement #9: Removed 4 lines text, added organization platform core visual) */}
+      <section className="relative min-h-[92vh] flex items-center justify-center pt-14 pb-20 lg:pt-20 lg:pb-28">
+        {/* Interactive 3D WebGL Core Background */}
+        <ThreeCanvas className="opacity-60" />
 
         {/* 2D Particle constellation overlay */}
-        <NetworkCanvas density={35} className="opacity-40" />
+        <NetworkCanvas density={30} className="opacity-35" />
 
         {/* Ambient Gradient Lights */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[650px] h-[380px] bg-dos-cyan/15 rounded-full blur-[150px] pointer-events-none" />
-        <div className="absolute top-1/3 left-1/4 w-[450px] h-[450px] bg-dos-azure/15 rounded-full blur-[170px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-dos-cyan/15 rounded-full blur-[160px] pointer-events-none" />
+        <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-dos-azure/15 rounded-full blur-[180px] pointer-events-none" />
 
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wide uppercase bg-dos-surface/90 border border-dos-border/80 text-dos-cyan mb-8 shadow-sm backdrop-blur-md">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+          {/* Top Pill */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono tracking-wide uppercase bg-dos-surface/90 border border-dos-border/80 text-dos-cyan mb-6 shadow-sm backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-dos-cyan animate-pulse"></span>
             <span>Technology • Systems • Data • Services • AI</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold font-heading text-dos-cloud tracking-tight leading-[1.1] mb-6">
+          {/* Heading */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold font-heading text-dos-cloud tracking-tight leading-[1.1] mb-8">
             Building Intelligent Technology for a{' '}
             <span className="text-gradient">Connected World.</span>
           </h1>
 
-          <p className="max-w-3xl mx-auto text-lg sm:text-xl text-dos-mist/85 font-sans leading-relaxed mb-10">
-            DOS3.AI explores the intersection of software, data, computing systems, digital infrastructure, and artificial intelligence to help shape the next generation of technology.
-          </p>
+          {/* Requirement #9: The 4 lines of text have been replaced by the futuristic architectural visual of what DOS3.AI is building */}
+          <div className="relative max-w-4xl mx-auto mb-10 group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-dos-cyan via-dos-azure to-dos-violet rounded-3xl blur-xl opacity-40 group-hover:opacity-75 transition duration-500"></div>
+            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-dos-cyan/40 bg-dos-void shadow-2xl">
+              <img
+                src="/images/dos3_platform_core.jpg"
+                alt="DOS3.AI Autonomous Computing Fabric - 5 Connected Layers"
+                className="w-full h-auto object-cover transform group-hover:scale-[1.01] transition duration-700 max-h-[460px]"
+                loading="eager"
+              />
+              
+              {/* Overlay Badges */}
+              <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex flex-wrap items-center justify-between gap-2 p-3 rounded-2xl bg-dos-void/85 backdrop-blur-md border border-dos-border/70 text-left">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-dos-cyan animate-pulse" />
+                  <span className="text-xs font-mono font-semibold text-dos-cloud">
+                    DOS3.AI Substrate: Data • OS • Servers • Services • AI
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 text-[11px] font-mono text-dos-mist/80">
+                  <span className="hidden sm:inline">Dallas HPC Superclusters</span>
+                  <span className="px-2 py-0.5 rounded bg-dos-surface border border-dos-cyan/40 text-dos-cyan">
+                    H100 Powered
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
             <Button
               to="/technology"
@@ -171,34 +215,54 @@ for step in plan.stream_steps():
             >
               Explore Our Technology
             </Button>
-            <Button
-              to="/contact"
-              variant="secondary"
-              size="lg"
-              className="w-full sm:w-auto justify-center"
+            <a
+              href={EXTERNAL_LINKS.bookingSchedule}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-dos-surface hover:bg-dos-surfaceHover border border-dos-cyan/40 text-dos-cyan text-sm font-semibold transition-all hover:shadow-glow-cyan/20"
             >
-              Connect With Us
-            </Button>
+              <Calendar className="w-4 h-4" />
+              <span>Connect With Us</span>
+            </a>
+            <a
+              href={EXTERNAL_LINKS.manualPdf}
+              download="DOS3AI_Architecture_Manual.pdf"
+              className="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-dos-surface/80 hover:bg-dos-surface border border-dos-border text-dos-mist hover:text-white text-sm font-semibold transition-all"
+            >
+              <Download className="w-4 h-4 text-dos-azure" />
+              <span>Manual (PDF)</span>
+            </a>
           </div>
         </div>
       </section>
 
-      {/* 2. PROOF STRIP / RESEARCH FOCUS (Playbook Section 3) */}
+      {/* 2. PROOF STRIP (With Dallas Maps link, 50+ Team Size, Standards) */}
       <section className="py-6 sm:py-8 border-y border-dos-border/30 bg-dos-midnight/40 backdrop-blur-md relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:flex lg:flex-wrap items-center justify-center lg:justify-between gap-4 sm:gap-6 text-center text-xs font-mono text-dos-mist/70">
-            <div className="flex items-center justify-center lg:justify-start gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-dos-cyan shrink-0" />
+          <div className="grid grid-cols-2 lg:flex lg:flex-wrap items-center justify-center lg:justify-between gap-4 sm:gap-6 text-center text-xs font-mono text-dos-mist/80">
+            {/* Dallas Location with Google Maps Redirect (Requirement #11) */}
+            <a
+              href={EXTERNAL_LINKS.dallasMaps}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center lg:justify-start gap-2 hover:text-dos-cyan transition-colors"
+            >
+              <MapPin className="w-3.5 h-3.5 text-dos-cyan shrink-0" />
               <span>Dallas, Texas Headquarters</span>
+              <ExternalLink className="w-3 h-3 opacity-60" />
+            </a>
+
+            {/* Team Size Badge (Requirement #17) */}
+            <div className="flex items-center justify-center lg:justify-start gap-2 text-dos-cyan">
+              <Users className="w-3.5 h-3.5 text-dos-cyan shrink-0" />
+              <span className="font-semibold">{COMPANY_STATS.teamSize}</span>
             </div>
+
             <div className="flex items-center justify-center lg:justify-start gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-dos-azure shrink-0" />
-              <span>WCAG 2.2 Level AA Accessible</span>
+              <span>NVIDIA H100 Superclusters</span>
             </div>
-            <div className="flex items-center justify-center lg:justify-start gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-dos-violet shrink-0" />
-              <span>ISO/IEC 42001 & NIST AI Alignment</span>
-            </div>
+
             <div className="flex items-center justify-center lg:justify-start gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-dos-magenta shrink-0" />
               <span>Deterministic Verification Architecture</span>
@@ -207,138 +271,116 @@ for step in plan.stream_steps():
         </div>
       </section>
 
-      {/* 3. THE SHIFT (Playbook Section 4) */}
-      <section className="py-20 lg:py-28 relative">
+      {/* 3. PLATFORM ARCHITECTURE - ACCORDION EXPANSION (Requirement #4: Content expands downwards under clicked layer) */}
+      <section className="py-24 lg:py-32 border-t border-dos-border/30 bg-dos-midnight/30 relative" id="platform-architecture">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            pill="The Industry Shift"
-            title="Moving Beyond Fragile Point Solutions"
-            subtitle="The fundamental paradigm shift in how modern enterprise intelligence must be constructed."
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <TiltCard className="glass-card p-8 border border-dos-border/60">
-              <div className="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-400 mb-4 font-mono text-xs font-bold">
-                OLD
-              </div>
-              <h3 className="text-lg font-bold font-heading text-dos-cloud mb-2">The Old Way</h3>
-              <p className="text-xs text-dos-mist/80 leading-relaxed font-sans">
-                Brittle pipeline glue connecting isolated applications with unverified AI wrappers and unstructured data silos.
-              </p>
-            </TiltCard>
-
-            <TiltCard className="glass-card p-8 border border-dos-border/60">
-              <div className="w-10 h-10 rounded-xl bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center text-yellow-400 mb-4 font-mono text-xs font-bold">
-                RISK
-              </div>
-              <h3 className="text-lg font-bold font-heading text-dos-cloud mb-2">Why It Breaks</h3>
-              <p className="text-xs text-dos-mist/80 leading-relaxed font-sans">
-                Complex workloads fail when machine reasoning operates without deterministic grounding, memory-safe boundaries, or runtime validation.
-              </p>
-            </TiltCard>
-
-            <TiltCard className="glass-card p-8 border border-dos-cyan/40 shadow-glow-cyan/20">
-              <div className="w-10 h-10 rounded-xl bg-dos-cyan/10 border border-dos-cyan/30 flex items-center justify-center text-dos-cyan mb-4 font-mono text-xs font-bold">
-                NEW
-              </div>
-              <h3 className="text-lg font-bold font-heading text-dos-cloud mb-2">What Changed</h3>
-              <p className="text-xs text-dos-mist/80 leading-relaxed font-sans">
-                An integrated computational fabric uniting Data, Operating Systems, Servers, Services, and AI into one continuous, verified architecture.
-              </p>
-            </TiltCard>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. PLATFORM OVERVIEW: 5-LAYER INTERACTIVE SCHEMATIC (Playbook Section 5) */}
-      <section className="py-24 lg:py-32 border-t border-dos-border/30 bg-dos-midnight/30 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             pill="Platform Architecture"
             title="One Architecture. Five Connected Layers."
             subtitle="The name DOS3.AI defines our structural platform hierarchy: Data, Operating Systems, Servers, Services, and AI operating in harmony."
           />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Interactive Layer Selector Buttons */}
-            <div className="lg:col-span-5 space-y-3">
-              {layers.map((layer, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => setActiveLayer(idx)}
-                  className={`w-full text-left p-4 sm:p-5 rounded-2xl border transition-all flex items-center justify-between group ${
-                    activeLayer === idx
-                      ? 'bg-dos-surface border-dos-cyan/50 shadow-glow-cyan/20'
-                      : 'bg-dos-surface/40 border-dos-border/50 hover:border-dos-cyan/30 hover:bg-dos-surface/70'
+          {/* Accordion Layer Stack: Content expands downwards directly under each clicked layer */}
+          <div className="space-y-4">
+            {layers.map((layer, idx) => {
+              const isSelected = activeLayer === idx;
+              return (
+                <div
+                  key={layer.id}
+                  className={`layer-accordion-item rounded-2xl border transition-all duration-300 overflow-hidden ${
+                    isSelected
+                      ? 'layer-accordion-active border-dos-cyan/60 bg-dos-surface/90 shadow-glow-cyan/20'
+                      : 'border-dos-border/60 bg-dos-surface/40 hover:border-dos-cyan/30 hover:bg-dos-surface/70'
                   }`}
                 >
-                  <div>
-                    <span className="text-[11px] font-mono text-dos-cyan uppercase tracking-wider block mb-0.5">
-                      {layer.subtitle}
-                    </span>
-                    <h3 className="text-base sm:text-lg font-bold font-heading text-dos-cloud group-hover:text-white">
-                      {layer.name}
-                    </h3>
-                  </div>
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors ${
-                    activeLayer === idx ? 'bg-dos-cyan text-black' : 'bg-dos-void text-dos-mist/50'
-                  }`}>
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
-                </button>
-              ))}
-            </div>
+                  {/* Layer Header Button */}
+                  <button
+                    type="button"
+                    onClick={() => setActiveLayer(isSelected ? null : idx)}
+                    className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 transition-colors focus:outline-none"
+                    aria-expanded={isSelected}
+                  >
+                    <div>
+                      <span className="text-[11px] font-mono text-dos-cyan uppercase tracking-wider block mb-1">
+                        {layer.subtitle}
+                      </span>
+                      <h3 className="text-xl sm:text-2xl font-bold font-heading text-dos-cloud flex items-center gap-2">
+                        <span>{layer.name}</span>
+                        {isSelected && (
+                          <span className="w-2 h-2 rounded-full bg-dos-cyan animate-pulse" />
+                        )}
+                      </h3>
+                    </div>
 
-            {/* Inspector Display for Selected Layer */}
-            <div className="lg:col-span-7">
-              <TiltCard className="glass-card rounded-3xl p-8 sm:p-12 border border-dos-border/80 relative">
-                <div className="flex items-center justify-between pb-4 border-b border-dos-border/40 mb-6">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-dos-cyan animate-pulse" />
-                    <span className="text-xs font-mono text-dos-cyan">
-                      ACTIVE_LAYER: 0{activeLayer + 1}_{layers[activeLayer].name.toUpperCase()}
-                    </span>
-                  </div>
-                  <span className="text-xs font-mono text-dos-mist/60">dos3.stack.v1</span>
+                    <div
+                      className={`layer-arrow-badge w-9 h-9 rounded-xl flex items-center justify-center transition-all ${
+                        isSelected
+                          ? 'bg-dos-cyan text-black rotate-180 shadow-glow-cyan/30'
+                          : 'bg-dos-void text-dos-mist/70 border border-dos-border/50'
+                      }`}
+                    >
+                      <ChevronDown className="w-5 h-5" />
+                    </div>
+                  </button>
+
+                  {/* Accordion Content that comes down when clicked (Requirement #4) */}
+                  {isSelected && (
+                    <div className="px-5 pb-6 sm:px-6 sm:pb-8 pt-2 border-t border-dos-border/50 animate-slideDown">
+                      <div className="space-y-4">
+                        <div className="flex items-center justify-between text-xs font-mono text-dos-cyan">
+                          <span>ACTIVE_LAYER: 0{idx + 1}_{layer.name.toUpperCase()}</span>
+                          <span className="text-dos-mist/50">dos3.stack.v1</span>
+                        </div>
+
+                        <p className="text-sm sm:text-base text-dos-mist/90 leading-relaxed font-sans">
+                          {layer.description}
+                        </p>
+
+                        <div className="layer-specs-box p-4 rounded-xl bg-dos-void border border-dos-border/70">
+                          <span className="text-[10px] font-semibold uppercase tracking-wider text-dos-cyan block mb-1 font-mono">
+                            Technical Specifications
+                          </span>
+                          <p className="text-xs font-mono text-dos-mist/85">
+                            {layer.specs}
+                          </p>
+                        </div>
+
+                        <p className="text-xs text-dos-mist/70 font-sans leading-relaxed">
+                          <strong className="text-dos-cloud">Architectural Role: </strong>
+                          {layer.deepDive}
+                        </p>
+
+                        <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-t border-dos-border/40">
+                          <span className="text-xs text-dos-mist/60 font-mono">
+                            Engineered for zero-drift deterministic operations
+                          </span>
+                          <Button to="/technology" variant="outline" size="sm" icon={<ArrowRight className="w-4 h-4" />}>
+                            View Full Layer Deep Dive
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
-
-                <span className="text-xs font-mono text-dos-cyan uppercase tracking-wider block mb-2">
-                  Architectural Specification
-                </span>
-
-                <h3 className="text-2xl sm:text-3xl font-bold font-heading text-dos-cloud mb-4">
-                  {layers[activeLayer].name} Layer
-                </h3>
-
-                <p className="text-sm sm:text-base text-dos-mist/85 font-sans leading-relaxed mb-6">
-                  {layers[activeLayer].description}
-                </p>
-
-                <div className="p-4 rounded-xl bg-dos-surface border border-dos-border/60">
-                  <span className="text-[10px] font-semibold uppercase tracking-wider text-dos-cyan block mb-1">
-                    Technical Specifications
-                  </span>
-                  <p className="text-xs font-mono text-dos-mist/80">
-                    {layers[activeLayer].specs}
-                  </p>
-                </div>
-
-                <div className="pt-6 mt-6 border-t border-dos-border/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                  <span className="text-xs text-dos-mist/60">
-                    Engineered for continuous multi-tier integration
-                  </span>
-                  <Button to="/technology" variant="outline" size="sm" icon={<ArrowRight className="w-4 h-4" />}>
-                    View Deep Dive
-                  </Button>
-                </div>
-              </TiltCard>
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* 5. CAPABILITIES (Playbook Section 6) */}
+      {/* 4. TOOLS & ECOSYSTEM IN CONTINUOUS MOTION (Requirement #8: AI, ML, Agentic AI, MCP, HPC Radar & Infinite Loop) */}
+      <TechEcosystemLoop />
+
+      {/* 5. PREVIOUS TOP-TIER PROJECTS (Requirement #12: AI, Agentic AI, MCP, LLMs) */}
+      <PreviousProjects />
+
+      {/* 6. BUILD YOUR OWN AI AGENT & MCP SERVER (Requirements #15 & #16) */}
+      <BuildAgentCTA />
+
+      {/* 7. PEOPLE & CEO SECTION (Requirements #6, #10, #17) */}
+      <PeopleSection />
+
+      {/* 8. CAPABILITIES */}
       <section className="py-24 lg:py-32 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
@@ -376,104 +418,7 @@ for step in plan.stream_steps():
         </div>
       </section>
 
-      {/* 6. HOW IT WORKS (Playbook Section 7) */}
-      <section className="py-24 lg:py-32 border-t border-dos-border/30 bg-dos-midnight/30 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            pill="Execution Flow"
-            title="How the Architecture Works"
-            subtitle="A transparent, deterministic four-step pipeline from high-level goal ingestion to verified result."
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="glass-card rounded-2xl p-6 border border-dos-border/60 relative">
-              <span className="text-2xl font-bold font-mono text-dos-cyan/40 mb-3 block">STEP 01</span>
-              <h4 className="text-base font-bold font-heading text-dos-cloud mb-2">Context Ingestion</h4>
-              <p className="text-xs text-dos-mist/80 font-sans leading-relaxed">
-                Workload goals are ingested and mapped to verified semantic knowledge graphs and current system state.
-              </p>
-            </div>
-
-            <div className="glass-card rounded-2xl p-6 border border-dos-border/60 relative">
-              <span className="text-2xl font-bold font-mono text-dos-azure/40 mb-3 block">STEP 02</span>
-              <h4 className="text-base font-bold font-heading text-dos-cloud mb-2">Deterministic Planning</h4>
-              <p className="text-xs text-dos-mist/80 font-sans leading-relaxed">
-                Task steps are decomposed into typed contract operations with explicit dependency validation.
-              </p>
-            </div>
-
-            <div className="glass-card rounded-2xl p-6 border border-dos-border/60 relative">
-              <span className="text-2xl font-bold font-mono text-dos-violet/40 mb-3 block">STEP 03</span>
-              <h4 className="text-base font-bold font-heading text-dos-cloud mb-2">Permissioned Execution</h4>
-              <p className="text-xs text-dos-mist/80 font-sans leading-relaxed">
-                Operations execute within hardware-isolated boundaries under human policy gates.
-              </p>
-            </div>
-
-            <div className="glass-card rounded-2xl p-6 border border-dos-cyan/40 shadow-glow-cyan/20 relative">
-              <span className="text-2xl font-bold font-mono text-dos-cyan mb-3 block">STEP 04</span>
-              <h4 className="text-base font-bold font-heading text-dos-cloud mb-2">Result Verification</h4>
-              <p className="text-xs text-dos-mist/80 font-sans leading-relaxed">
-                Outputs are verified against deterministic acceptance criteria and recorded in immutable audit logs.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 7. USE CASES PREVIEW (Playbook Section 8) */}
-      <section className="py-24 lg:py-32 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            pill="Tailored Scenarios"
-            title="Built for High-Stakes Environments"
-            subtitle="Designed for engineering teams who cannot afford unverified AI hallucinations or unpredictable latency."
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <TiltCard className="glass-card p-8 border border-dos-border/60 flex flex-col justify-between">
-              <div>
-                <span className="text-xs font-mono text-dos-cyan uppercase tracking-wider block mb-2">Persona Focus</span>
-                <h3 className="text-xl font-bold font-heading text-dos-cloud mb-3">ML & Systems Engineers</h3>
-                <p className="text-xs text-dos-mist/80 leading-relaxed font-sans mb-4">
-                  Construct deterministic reasoning harnesses without wrestling with fragile glue code or unpredictable model drift.
-                </p>
-              </div>
-              <Button to="/solutions" variant="outline" size="sm" icon={<ArrowRight className="w-4 h-4" />}>
-                Read ML Solutions
-              </Button>
-            </TiltCard>
-
-            <TiltCard className="glass-card p-8 border border-dos-border/60 flex flex-col justify-between">
-              <div>
-                <span className="text-xs font-mono text-dos-azure uppercase tracking-wider block mb-2">Architect Focus</span>
-                <h3 className="text-xl font-bold font-heading text-dos-cloud mb-3">Enterprise CTOs</h3>
-                <p className="text-xs text-dos-mist/80 leading-relaxed font-sans mb-4">
-                  Avoid proprietary lock-in. Maintain unified governance across on-premise hardware and multi-cloud backends.
-                </p>
-              </div>
-              <Button to="/solutions" variant="outline" size="sm" icon={<ArrowRight className="w-4 h-4" />}>
-                Read CTO Architecture
-              </Button>
-            </TiltCard>
-
-            <TiltCard className="glass-card p-8 border border-dos-border/60 flex flex-col justify-between">
-              <div>
-                <span className="text-xs font-mono text-dos-magenta uppercase tracking-wider block mb-2">Security Focus</span>
-                <h3 className="text-xl font-bold font-heading text-dos-cloud mb-3">Security & CISOs</h3>
-                <p className="text-xs text-dos-mist/80 leading-relaxed font-sans mb-4">
-                  Enforce zero-retention data partitions, fine-grained access gateways, and cryptographically verified audit trails.
-                </p>
-              </div>
-              <Button to="/solutions" variant="outline" size="sm" icon={<ArrowRight className="w-4 h-4" />}>
-                Read Security Controls
-              </Button>
-            </TiltCard>
-          </div>
-        </div>
-      </section>
-
-      {/* 8. DEVELOPER TEASER & INTERACTIVE TERMINAL (Playbook Section 11) */}
+      {/* 9. DEVELOPER EXPERIENCE QUICKSTART */}
       <section className="py-24 lg:py-32 border-t border-dos-border/30 bg-dos-midnight/40 relative">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
@@ -482,14 +427,13 @@ for step in plan.stream_steps():
             subtitle="Shows the product is real. Seamless integration into modern TypeScript, Python, and cloud services."
           />
 
-          <div className="glass-card rounded-2xl border border-dos-border/80 overflow-hidden shadow-2xl">
-            {/* Terminal Header & Language Tabs */}
-            <div className="flex flex-wrap items-center justify-between px-4 sm:px-6 py-3 bg-dos-void/90 border-b border-dos-border/50 gap-3">
+          <div className="terminal-card glass-card rounded-2xl border border-dos-border/80 overflow-hidden shadow-2xl">
+            <div className="terminal-header flex flex-wrap items-center justify-between px-4 sm:px-6 py-3 bg-dos-void/90 border-b border-dos-border/50 gap-3">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-red-500/70" />
                 <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
                 <div className="w-3 h-3 rounded-full bg-emerald-500/70" />
-                <span className="ml-2 text-xs font-mono text-dos-mist/60">dos3-quickstart</span>
+                <span className="terminal-title ml-2 text-xs font-mono text-dos-mist/60">dos3-quickstart</span>
               </div>
 
               <div className="flex items-center gap-1 sm:gap-2">
@@ -498,7 +442,7 @@ for step in plan.stream_steps():
                     key={lang}
                     type="button"
                     onClick={() => setCodeLanguage(lang)}
-                    className={`px-3 py-1 rounded-md text-xs font-mono transition-colors ${
+                    className={`terminal-tab px-3 py-1 rounded-md text-xs font-mono transition-colors ${
                       codeLanguage === lang
                         ? 'bg-dos-surface text-dos-cyan font-bold border border-dos-border'
                         : 'text-dos-mist/60 hover:text-white'
@@ -511,7 +455,7 @@ for step in plan.stream_steps():
                 <button
                   type="button"
                   onClick={handleCopy}
-                  className="p-1.5 rounded-md hover:bg-dos-surface text-dos-mist hover:text-white transition-colors ml-2"
+                  className="terminal-copy-btn p-1.5 rounded-md hover:bg-dos-surface text-dos-mist hover:text-white transition-colors ml-2"
                   title="Copy snippet"
                   aria-label="Copy code"
                 >
@@ -520,9 +464,8 @@ for step in plan.stream_steps():
               </div>
             </div>
 
-            {/* Terminal Code Body */}
-            <div className="p-6 sm:p-8 bg-dos-void/70 overflow-x-auto">
-              <pre className="text-xs sm:text-sm font-mono text-dos-mist/90 leading-relaxed">
+            <div className="terminal-body p-6 sm:p-8 bg-dos-void/70 overflow-x-auto">
+              <pre className="terminal-code text-xs sm:text-sm font-mono text-dos-mist/90 leading-relaxed">
                 <code>{codeSnippets[codeLanguage]}</code>
               </pre>
             </div>
@@ -530,36 +473,12 @@ for step in plan.stream_steps():
         </div>
       </section>
 
-      {/* 9. TRUST BAND (Playbook Section 10) */}
-      <section className="py-20 border-t border-dos-border/30 bg-dos-midnight/20 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-8 space-y-3">
-              <div className="inline-flex items-center gap-2 text-xs font-mono text-dos-cyan">
-                <ShieldCheck className="w-4 h-4" />
-                <span>Foundational Security & Trust</span>
-              </div>
-              <h3 className="text-2xl sm:text-3xl font-bold font-heading text-dos-cloud">
-                Trust Center: Security & Responsible AI
-              </h3>
-              <p className="text-sm text-dos-mist/80 font-sans leading-relaxed max-w-2xl">
-                We believe security and ethical AI governance belong in the architectural core, not a footer disclaimer. Explore our data handling matrices, privacy commitments, and responsible evaluation policies.
-              </p>
-            </div>
-
-            <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
-              <Button to="/security" variant="outline" size="md">
-                Visit Security & Trust
-              </Button>
-              <Button to="/responsible-ai" variant="secondary" size="md">
-                Read Responsible AI Policy
-              </Button>
-            </div>
-          </div>
-        </div>
+      {/* 10. NEWSLETTER SIGN IN (Requirement #5) */}
+      <section className="py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Newsletter />
       </section>
 
-      {/* 10. FINAL CTA (Playbook Section 12) */}
+      {/* 11. FINAL CTA (With Organization Manual PDF download & Meeting Scheduler) */}
       <section className="py-24 lg:py-32 border-t border-dos-border/30 bg-gradient-to-b from-dos-midnight/50 to-dos-void relative">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-dos-cloud">
@@ -567,27 +486,28 @@ for step in plan.stream_steps():
           </h2>
 
           <p className="text-base sm:text-lg text-dos-mist/80 max-w-2xl mx-auto font-sans leading-relaxed">
-            Have an idea, a technical challenge, or an opportunity to collaborate? We'd like to hear from you.
+            Have an idea, a technical challenge, or an opportunity to build custom AI Agents & MCP servers with us?
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
-            <Button
-              to="/contact"
-              variant="primary"
-              size="lg"
-              className="w-full sm:w-auto justify-center"
-              icon={<ArrowRight className="w-5 h-5" />}
+            <a
+              href={EXTERNAL_LINKS.bookingSchedule}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-7 py-3.5 rounded-xl bg-gradient-to-r from-dos-cyan to-dos-azure text-black font-bold text-sm tracking-wide uppercase hover:opacity-95 shadow-glow-cyan/25 flex items-center justify-center gap-2 transition-all"
             >
-              Get in Touch
-            </Button>
-            <Button
-              to="/pricing"
-              variant="secondary"
-              size="lg"
-              className="w-full sm:w-auto justify-center"
+              <Calendar className="w-4 h-4" />
+              <span>Book 30-Min Meeting with DOS3.AI</span>
+            </a>
+
+            <a
+              href={EXTERNAL_LINKS.manualPdf}
+              download="DOS3AI_Architecture_Manual.pdf"
+              className="px-6 py-3.5 rounded-xl bg-dos-surface hover:bg-dos-surfaceHover border border-dos-cyan/40 text-dos-cyan font-semibold text-sm flex items-center justify-center gap-2 transition-all"
             >
-              View Engagement Models
-            </Button>
+              <Download className="w-4 h-4" />
+              <span>Download Architecture Manual (PDF)</span>
+            </a>
           </div>
         </div>
       </section>
