@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Linkedin, Calendar, Mail, MapPin, GraduationCap, Code2, Users, Quote, ExternalLink, ArrowRight } from 'lucide-react';
 import { CEO_PROFILE, EXTERNAL_LINKS } from '../data/content';
+import ceoPhoto from '../assets/ceo-hariharan-babu.jpg';
 
 export const PeopleSection: React.FC = () => {
   const [imgError, setImgError] = useState(false);
@@ -62,10 +63,16 @@ export const PeopleSection: React.FC = () => {
                   <div className="w-full h-full rounded-[22px] overflow-hidden bg-dos-void flex items-center justify-center border border-dos-border/50 relative">
                     {!imgError ? (
                       <img
-                        src="/images/ceo-hariharan-babu.jpg"
+                        src={ceoPhoto}
                         alt="Hariharan Babu - Founder & CEO, DOS3.AI"
                         className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
-                        onError={() => setImgError(true)}
+                        onError={(e) => {
+                          if (e.currentTarget.src !== '/images/ceo-hariharan-babu-official.jpg') {
+                            e.currentTarget.src = '/images/ceo-hariharan-babu-official.jpg';
+                          } else {
+                            setImgError(true);
+                          }
+                        }}
                       />
                     ) : (
                       <div className="w-full h-full flex flex-col items-center justify-center p-4">
