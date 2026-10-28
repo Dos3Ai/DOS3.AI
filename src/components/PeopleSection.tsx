@@ -148,17 +148,17 @@ export const PeopleSection: React.FC = () => {
             {/* CEO Vision & Core Skills */}
             <div className="lg:col-span-7 space-y-6">
               {/* CEO Quote Card */}
-              <div className="p-6 sm:p-8 rounded-2xl bg-dos-surface/90 border border-dos-border/70 relative">
+              <div className="ceo-quote-card p-6 sm:p-8 rounded-2xl bg-dos-surface/90 border border-dos-border/70 relative">
                 <Quote className="w-8 h-8 text-dos-cyan/30 absolute top-4 right-4" />
-                <span className="text-xs font-mono uppercase tracking-widest text-dos-cyan block mb-2">
+                <span className="text-xs font-mono uppercase tracking-widest text-dos-cyan block mb-2 font-semibold">
                   Executive Vision • Future Impact of AI
                 </span>
                 <blockquote className="text-sm sm:text-base text-dos-cloud font-sans leading-relaxed italic mb-4">
                   "{CEO_PROFILE.quote}"
                 </blockquote>
                 <div className="flex items-center justify-between text-xs font-mono text-dos-mist/70 pt-2 border-t border-dos-border/40">
-                  <span>— Hariharan Babu, Founder & CEO</span>
-                  <span className="text-dos-cyan">DOS3.AI Substrate Vision</span>
+                  <span className="quote-author">— Hariharan Babu, Founder & CEO</span>
+                  <span className="quote-title text-dos-cyan">DOS3.AI Substrate Vision</span>
                 </div>
               </div>
 

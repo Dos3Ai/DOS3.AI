@@ -143,8 +143,8 @@ export const BuildAgentCTA: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             {/* HPC superclusters */}
-            <div className="p-5 rounded-xl bg-dos-surface/80 border border-dos-border/60">
-              <div className="w-10 h-10 rounded-xl bg-dos-void border border-dos-cyan/40 flex items-center justify-center mx-auto mb-3 text-dos-cyan">
+            <div className="infra-card p-5 rounded-xl bg-dos-surface/80 border border-dos-border/60">
+              <div className="icon-box w-10 h-10 rounded-xl bg-dos-void border border-dos-cyan/40 flex items-center justify-center mx-auto mb-3 text-dos-cyan">
                 <Cpu className="w-5 h-5" />
               </div>
               <h4 className="text-sm font-bold font-heading text-white mb-1">
@@ -156,8 +156,8 @@ export const BuildAgentCTA: React.FC = () => {
             </div>
 
             {/* Cloud Partners */}
-            <div className="p-5 rounded-xl bg-dos-surface/80 border border-dos-border/60">
-              <div className="w-10 h-10 rounded-xl bg-dos-void border border-dos-azure/40 flex items-center justify-center mx-auto mb-3 text-dos-azure">
+            <div className="infra-card p-5 rounded-xl bg-dos-surface/80 border border-dos-border/60">
+              <div className="icon-box w-10 h-10 rounded-xl bg-dos-void border border-dos-azure/40 flex items-center justify-center mx-auto mb-3 text-dos-azure">
                 <Server className="w-5 h-5" />
               </div>
               <h4 className="text-sm font-bold font-heading text-white mb-1">
@@ -169,8 +169,8 @@ export const BuildAgentCTA: React.FC = () => {
             </div>
 
             {/* Research Labs */}
-            <div className="p-5 rounded-xl bg-dos-surface/80 border border-dos-border/60">
-              <div className="w-10 h-10 rounded-xl bg-dos-void border border-dos-violet/40 flex items-center justify-center mx-auto mb-3 text-dos-violet">
+            <div className="infra-card p-5 rounded-xl bg-dos-surface/80 border border-dos-border/60">
+              <div className="icon-box w-10 h-10 rounded-xl bg-dos-void border border-dos-violet/40 flex items-center justify-center mx-auto mb-3 text-dos-violet">
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <h4 className="text-sm font-bold font-heading text-white mb-1">

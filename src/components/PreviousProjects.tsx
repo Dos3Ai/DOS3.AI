@@ -11,7 +11,7 @@ export const PreviousProjects: React.FC = () => {
     : PREVIOUS_PROJECTS.filter((p) => p.category === filter);
 
   return (
-    <section className="py-20 lg:py-28 relative bg-dos-midnight/20 border-t border-dos-border/40" id="projects-section">
+    <section className="previous-projects-section py-20 lg:py-28 relative bg-dos-midnight/20 border-t border-dos-border/40" id="projects-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">

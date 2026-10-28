@@ -187,7 +187,7 @@ for step in plan.stream_steps():
               />
               
               {/* Overlay Badges */}
-              <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex flex-wrap items-center justify-between gap-2 p-3 rounded-2xl bg-dos-void/85 backdrop-blur-md border border-dos-border/70 text-left">
+              <div className="hero-core-overlay absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex flex-wrap items-center justify-between gap-2 p-3 rounded-2xl bg-dos-void/85 backdrop-blur-md border border-dos-border/70 text-left">
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-dos-cyan animate-pulse" />
                   <span className="text-xs font-mono font-semibold text-dos-cloud">
@@ -196,7 +196,7 @@ for step in plan.stream_steps():
                 </div>
                 <div className="flex items-center gap-2 text-[11px] font-mono text-dos-mist/80">
                   <span className="hidden sm:inline">Dallas HPC Superclusters</span>
-                  <span className="px-2 py-0.5 rounded bg-dos-surface border border-dos-cyan/40 text-dos-cyan">
+                  <span className="badge-h100 px-2 py-0.5 rounded bg-dos-surface border border-dos-cyan/40 text-dos-cyan">
                     H100 Powered
                   </span>
                 </div>
@@ -227,7 +227,7 @@ for step in plan.stream_steps():
             <a
               href={EXTERNAL_LINKS.manualPdf}
               download="DOS3AI_Architecture_Manual.pdf"
-              className="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-dos-surface/80 hover:bg-dos-surface border border-dos-border text-dos-mist hover:text-white text-sm font-semibold transition-all"
+              className="btn-manual-download w-full sm:w-auto justify-center inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-dos-surface/80 hover:bg-dos-surface border border-dos-border text-dos-mist hover:text-white text-sm font-semibold transition-all"
             >
               <Download className="w-4 h-4 text-dos-azure" />
               <span>Manual (PDF)</span>
@@ -479,7 +479,7 @@ for step in plan.stream_steps():
       </section>
 
       {/* 11. FINAL CTA (With Organization Manual PDF download & Meeting Scheduler) */}
-      <section className="py-24 lg:py-32 border-t border-dos-border/30 bg-gradient-to-b from-dos-midnight/50 to-dos-void relative">
+      <section className="final-cta-section py-24 lg:py-32 border-t border-dos-border/30 bg-gradient-to-b from-dos-midnight/50 to-dos-void relative">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-dos-cloud">
             Let's Build What Comes Next.

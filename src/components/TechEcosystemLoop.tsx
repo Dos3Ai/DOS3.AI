@@ -24,7 +24,7 @@ export const TechEcosystemLoop: React.FC = () => {
   ];
 
   return (
-    <div className="py-20 lg:py-28 relative overflow-hidden bg-dos-void/80 border-y border-dos-border/40">
+    <div className="ecosystem-loop-section py-20 lg:py-28 relative overflow-hidden bg-dos-void/80 border-y border-dos-border/40">
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-dos-azure/10 rounded-full blur-[140px] pointer-events-none" />
 
@@ -103,11 +103,11 @@ export const TechEcosystemLoop: React.FC = () => {
 
             {/* Center Core Node */}
             <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-dos-cyan via-dos-azure to-dos-violet p-[2px] shadow-glow-cyan/50 z-10 flex items-center justify-center">
-              <div className="w-full h-full rounded-full bg-dos-void flex flex-col items-center justify-center text-center p-2">
+              <div className="orbit-center-core w-full h-full rounded-full bg-dos-void flex flex-col items-center justify-center text-center p-2">
                 <span className="font-heading font-extrabold text-xs text-white tracking-wider">
                   DOS3.AI
                 </span>
-                <span className="text-[8px] font-mono text-dos-cyan">
+                <span className="text-[8px] font-mono text-dos-cyan font-bold">
                   VERIFIED CORE
                 </span>
               </div>
