@@ -175,37 +175,8 @@ for step in plan.stream_steps():
             <span className="text-gradient">Connected World.</span>
           </h1>
 
-          {/* Requirement #9: The 4 lines of text have been replaced by the futuristic architectural visual of what DOS3.AI is building */}
-          <div className="relative max-w-4xl mx-auto mb-10 group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-dos-cyan via-dos-azure to-dos-violet rounded-3xl blur-xl opacity-40 group-hover:opacity-75 transition duration-500"></div>
-            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-dos-cyan/40 bg-dos-void shadow-2xl">
-              <img
-                src="/images/dos3_platform_core.jpg"
-                alt="DOS3.AI Autonomous Computing Fabric - 5 Connected Layers"
-                className="w-full h-auto object-cover transform group-hover:scale-[1.01] transition duration-700 max-h-[460px]"
-                loading="eager"
-              />
-              
-              {/* Overlay Badges */}
-              <div className="hero-core-overlay absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex flex-wrap items-center justify-between gap-2 p-3 rounded-2xl bg-dos-void/85 backdrop-blur-md border border-dos-border/70 text-left">
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-dos-cyan animate-pulse" />
-                  <span className="text-xs font-mono font-semibold text-dos-cloud">
-                    DOS3.AI Substrate: Data • OS • Servers • Services • AI
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 text-[11px] font-mono text-dos-mist/80">
-                  <span className="hidden sm:inline">Dallas HPC Superclusters</span>
-                  <span className="badge-h100 px-2 py-0.5 rounded bg-dos-surface border border-dos-cyan/40 text-dos-cyan">
-                    H100 Powered
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
+          {/* CTA Buttons (Explore, Connect, PDF) */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto mb-4">
             <Button
               to="/technology"
               variant="primary"
@@ -381,7 +352,7 @@ for step in plan.stream_steps():
       <PeopleSection />
 
       {/* 8. CAPABILITIES */}
-      <section className="py-24 lg:py-32 relative">
+      <section className="pt-4 pb-20 lg:pt-6 lg:pb-28 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             pill="Capabilities"

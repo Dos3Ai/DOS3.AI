@@ -43,7 +43,7 @@ export const TechEcosystemLoop: React.FC = () => {
 
       {/* Orbit Visualization Card in Center */}
       <div className="max-w-4xl mx-auto px-4 mb-14">
-        <div className="glass-card rounded-3xl p-6 sm:p-10 border border-dos-border/80 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
+        <div className="glass-card rounded-3xl p-5 sm:p-8 md:p-10 border border-dos-border/80 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
           {/* Left info */}
           <div className="max-w-md space-y-4 text-center md:text-left z-10">
             <span className="text-xs font-mono uppercase tracking-widest text-dos-cyan block">
@@ -69,45 +69,45 @@ export const TechEcosystemLoop: React.FC = () => {
           </div>
 
           {/* Right Circular Orbit Animation */}
-          <div className="relative w-64 h-64 sm:w-72 sm:h-72 flex items-center justify-center shrink-0">
+          <div className="relative w-72 h-72 sm:w-80 sm:h-80 flex items-center justify-center shrink-0 my-2 md:my-0">
             {/* Outer rotating ring */}
-            <div className="absolute inset-0 rounded-full border border-dashed border-dos-cyan/30 animate-spin [animation-duration:24s]" />
+            <div className="absolute inset-2 sm:inset-0 rounded-full border border-dashed border-dos-cyan/30 animate-spin [animation-duration:24s] pointer-events-none" />
             {/* Middle rotating ring in reverse */}
-            <div className="absolute inset-6 rounded-full border border-dos-azure/40 animate-spin [animation-duration:16s] [animation-direction:reverse]" />
+            <div className="absolute inset-8 sm:inset-6 rounded-full border border-dos-azure/40 animate-spin [animation-duration:16s] [animation-direction:reverse] pointer-events-none" />
             {/* Inner pulsing ring */}
-            <div className="absolute inset-14 rounded-full border border-dos-violet/50 animate-pulse" />
+            <div className="absolute inset-16 sm:inset-14 rounded-full border border-dos-violet/50 animate-pulse pointer-events-none" />
 
             {/* Orbiting Node 1: MCP */}
-            <div className="absolute top-1 left-1/2 -translate-x-1/2 p-2 rounded-xl bg-dos-surface border border-dos-cyan shadow-glow-cyan/40 text-[10px] font-mono text-dos-cyan flex items-center gap-1">
-              <Zap className="w-3 h-3" />
+            <div className="absolute top-1 left-1/2 -translate-x-1/2 px-2.5 py-1.5 rounded-xl bg-dos-void/95 sm:bg-dos-surface border border-dos-cyan shadow-glow-cyan/40 text-[10px] font-mono text-dos-cyan flex items-center gap-1.5 z-20 whitespace-nowrap">
+              <Zap className="w-3.5 h-3.5 shrink-0" />
               <span>MCP Server</span>
             </div>
 
             {/* Orbiting Node 2: Agent Swarms */}
-            <div className="absolute bottom-1 left-1/2 -translate-x-1/2 p-2 rounded-xl bg-dos-surface border border-dos-azure shadow-glow-azure/40 text-[10px] font-mono text-dos-azure flex items-center gap-1">
-              <Network className="w-3 h-3" />
+            <div className="absolute bottom-1 left-1/2 -translate-x-1/2 px-2.5 py-1.5 rounded-xl bg-dos-void/95 sm:bg-dos-surface border border-dos-azure shadow-glow-azure/40 text-[10px] font-mono text-dos-azure flex items-center gap-1.5 z-20 whitespace-nowrap">
+              <Network className="w-3.5 h-3.5 shrink-0" />
               <span>Agentic AI</span>
             </div>
 
             {/* Orbiting Node 3: LLM Reasoning */}
-            <div className="absolute left-1 top-1/2 -translate-y-1/2 p-2 rounded-xl bg-dos-surface border border-dos-violet shadow-sm text-[10px] font-mono text-dos-violet flex items-center gap-1">
-              <Sparkles className="w-3 h-3" />
+            <div className="absolute -left-1 sm:-left-3 top-1/2 -translate-y-1/2 px-2.5 py-1.5 rounded-xl bg-dos-void/95 sm:bg-dos-surface border border-dos-violet shadow-sm text-[10px] font-mono text-dos-violet flex items-center gap-1.5 z-20 whitespace-nowrap">
+              <Sparkles className="w-3.5 h-3.5 shrink-0" />
               <span>LLM Runtimes</span>
             </div>
 
             {/* Orbiting Node 4: HPC Superclusters */}
-            <div className="absolute right-1 top-1/2 -translate-y-1/2 p-2 rounded-xl bg-dos-surface border border-emerald-400 shadow-sm text-[10px] font-mono text-emerald-400 flex items-center gap-1">
-              <Cpu className="w-3 h-3" />
+            <div className="absolute -right-1 sm:-right-3 top-1/2 -translate-y-1/2 px-2.5 py-1.5 rounded-xl bg-dos-void/95 sm:bg-dos-surface border border-emerald-400 shadow-sm text-[10px] font-mono text-emerald-400 flex items-center gap-1.5 z-20 whitespace-nowrap">
+              <Cpu className="w-3.5 h-3.5 shrink-0 text-emerald-400" />
               <span>HPC Cluster</span>
             </div>
 
             {/* Center Core Node */}
-            <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-dos-cyan via-dos-azure to-dos-violet p-[2px] shadow-glow-cyan/50 z-10 flex items-center justify-center">
+            <div className="w-20 h-20 sm:w-22 sm:h-22 rounded-full bg-gradient-to-tr from-dos-cyan via-dos-azure to-dos-violet p-[2px] shadow-glow-cyan/50 z-10 flex items-center justify-center">
               <div className="orbit-center-core w-full h-full rounded-full bg-dos-void flex flex-col items-center justify-center text-center p-2">
-                <span className="font-heading font-extrabold text-xs text-white tracking-wider">
+                <span className="font-heading font-extrabold text-[11px] sm:text-xs text-white tracking-wider leading-none mb-0.5">
                   DOS3.AI
                 </span>
-                <span className="text-[8px] font-mono text-dos-cyan font-bold">
+                <span className="text-[7px] sm:text-[8px] font-mono text-dos-cyan font-bold tracking-wider leading-none">
                   VERIFIED CORE
                 </span>
               </div>

@@ -123,7 +123,7 @@ export const Careers: React.FC = () => {
                     required
                     value={talentEmail}
                     onChange={(e) => setTalentEmail(e.target.value)}
-                    placeholder="ada@university.edu"
+                    placeholder="ada@gmail.com"
                     className="w-full px-3.5 py-2.5 rounded-xl bg-dos-surface border border-dos-border/70 text-white placeholder:text-dos-mist/40 focus:outline-none focus:ring-1 focus:ring-dos-cyan"
                   />
                 </div>

@@ -7,7 +7,7 @@ export const PeopleSection: React.FC = () => {
   const [imgError, setImgError] = useState(false);
 
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden" id="people-section">
+    <section className="pt-16 pb-8 lg:pt-24 lg:pb-12 relative overflow-hidden" id="people-section">
       {/* Background ambient lighting */}
       <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-dos-cyan/10 rounded-full blur-[160px] pointer-events-none" />
 
@@ -82,7 +82,7 @@ export const PeopleSection: React.FC = () => {
                           </span>
                         </div>
                         <span className="text-sm font-bold font-heading text-white">
-                          Hariharan Babu
+                          Dr. Hariharan Babu BE, MS, PhD
                         </span>
                       </div>
                     )}
@@ -96,7 +96,7 @@ export const PeopleSection: React.FC = () => {
                 </div>
               </div>
 
-              <h3 className="text-2xl font-bold font-heading text-dos-cloud mb-1">
+              <h3 className="text-xl sm:text-2xl font-bold font-heading text-dos-cloud mb-1 tracking-tight">
                 {CEO_PROFILE.name}
               </h3>
               <p className="text-xs font-mono text-dos-cyan uppercase tracking-wider mb-3">
@@ -104,9 +104,9 @@ export const PeopleSection: React.FC = () => {
               </p>
 
               {/* Education */}
-              <div className="flex items-center gap-2 text-xs text-dos-mist/80 font-sans mb-4">
+              <div className="inline-flex items-center justify-center gap-2 text-xs text-dos-mist/80 font-sans mb-4 max-w-sm px-2 text-left">
                 <GraduationCap className="w-4 h-4 text-dos-azure shrink-0" />
-                <span>{CEO_PROFILE.education}</span>
+                <span className="leading-snug">{CEO_PROFILE.education}</span>
               </div>
 
               {/* Connect / Redirections */}
@@ -164,7 +164,7 @@ export const PeopleSection: React.FC = () => {
                   "{CEO_PROFILE.quote}"
                 </blockquote>
                 <div className="flex items-center justify-between text-xs font-mono text-dos-mist/70 pt-2 border-t border-dos-border/40">
-                  <span className="quote-author">— Hariharan Babu, Founder & CEO</span>
+                  <span className="quote-author">— Dr. Hariharan Babu BE, MS, PhD, Founder & CEO</span>
                   <span className="quote-title text-dos-cyan">DOS3.AI Substrate Vision</span>
                 </div>
               </div>

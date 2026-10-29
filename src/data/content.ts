@@ -22,7 +22,7 @@ export const EXTERNAL_LINKS = {
 };
 
 export const CEO_PROFILE = {
-  name: 'Hariharan Babu',
+  name: 'Dr. Hariharan Babu BE, MS, PhD',
   role: 'Founder & Chief Executive Officer (CEO)',
   education: 'Advanced Computer Science & Distributed Systems Research',
   location: 'Dallas, Texas, USA',
