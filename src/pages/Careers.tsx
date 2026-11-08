@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Briefcase, Send, CheckCircle2, Sparkles, Users, ShieldCheck, Mail, MapPin, ArrowRight } from 'lucide-react';
+import { Briefcase, Send, CheckCircle2, Sparkles, Users, ShieldCheck, Mail, MapPin, ArrowRight, Linkedin, ExternalLink } from 'lucide-react';
 import { EXTERNAL_LINKS } from '../data/content';
 
 export const Careers: React.FC = () => {
@@ -72,6 +72,16 @@ export const Careers: React.FC = () => {
               <Mail className="w-3.5 h-3.5 text-dos-azure" />
               <span>careers@dos3.ai</span>
             </span>
+            <a
+              href={EXTERNAL_LINKS.companyLinkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-dos-surface hover:bg-dos-surfaceHover border border-dos-cyan/40 text-dos-cyan hover:text-white transition-all shadow-sm"
+            >
+              <Linkedin className="w-3.5 h-3.5" />
+              <span>Follow DOS3.AI on LinkedIn</span>
+              <ExternalLink className="w-3 h-3 opacity-60" />
+            </a>
           </div>
         </div>
       </div>

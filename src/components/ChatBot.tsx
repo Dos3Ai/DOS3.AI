@@ -56,7 +56,8 @@ export const ChatBot: React.FC = () => {
   const quickPrompts = [
     'What is the 5-Layer Architecture?',
     'Build custom MCP server with us',
-    'Meet CEO Hariharan Babu',
+    'Follow DOS3.AI on LinkedIn',
+    'Meet CEO Dr. Hariharan Babu',
     'Explore previous AI projects',
     'Download Architecture Manual PDF',
     'Schedule a 30-min meeting'
@@ -103,10 +104,16 @@ export const ChatBot: React.FC = () => {
         label: 'Book 30-Min Architecture Discovery',
         href: EXTERNAL_LINKS.bookingSchedule
       };
-    } else if (query.includes('ceo') || query.includes('hariharan') || query.includes('founder') || query.includes('leadership')) {
-      replyText = `DOS3.AI is founded and led by CEO Hariharan Babu, who specializes in advanced distributed systems, Agentic AI, and HPC supercluster engineering. He believes machine reasoning must be grounded in verified operating systems and deterministic boundaries.`;
+    } else if (query.includes('linkedin') || query.includes('social') || query.includes('company page')) {
+      replyText = `Follow our official DOS3.AI LinkedIn company page for architectural blueprints, system research updates, and HPC supercluster announcements! You can also connect directly with our CEO, Dr. Hariharan Babu BE, MS, PhD.`;
       actionObj = {
-        label: "View CEO Hariharan Babu's LinkedIn",
+        label: 'Follow DOS3.AI on LinkedIn',
+        href: EXTERNAL_LINKS.companyLinkedIn
+      };
+    } else if (query.includes('ceo') || query.includes('hariharan') || query.includes('founder') || query.includes('leadership')) {
+      replyText = `DOS3.AI is founded and led by CEO Dr. Hariharan Babu BE, MS, PhD, who specializes in advanced distributed systems, Agentic AI, and HPC supercluster engineering. He believes machine reasoning must be grounded in verified operating systems and deterministic boundaries.`;
+      actionObj = {
+        label: "View CEO Dr. Hariharan Babu's LinkedIn",
         href: EXTERNAL_LINKS.ceoLinkedIn
       };
     } else if (query.includes('meet') || query.includes('schedule') || query.includes('call') || query.includes('book')) {

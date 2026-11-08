@@ -96,8 +96,27 @@ export const Contact: React.FC = () => {
                   </div>
                 </div>
 
-                {/* LinkedIn */}
-                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-dos-surface/80 border border-dos-border/60">
+                {/* Company LinkedIn */}
+                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-dos-surface/80 border border-dos-border/60 hover:border-dos-cyan/40 transition-colors">
+                  <Linkedin className="w-5 h-5 text-dos-cyan shrink-0 mt-0.5" />
+                  <div>
+                    <span className="text-xs font-semibold text-dos-cloud uppercase tracking-wider block">
+                      Company LinkedIn
+                    </span>
+                    <a
+                      href={EXTERNAL_LINKS.companyLinkedIn}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-mono text-dos-cyan hover:underline inline-flex items-center gap-1"
+                    >
+                      <span>DOS3.AI Official Page</span>
+                      <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+                    </a>
+                  </div>
+                </div>
+
+                {/* Leadership LinkedIn */}
+                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-dos-surface/80 border border-dos-border/60 hover:border-dos-azure/40 transition-colors">
                   <Linkedin className="w-5 h-5 text-dos-azure shrink-0 mt-0.5" />
                   <div>
                     <span className="text-xs font-semibold text-dos-cloud uppercase tracking-wider block">
@@ -109,7 +128,7 @@ export const Contact: React.FC = () => {
                       rel="noopener noreferrer"
                       className="text-sm font-mono text-dos-azure hover:underline inline-flex items-center gap-1"
                     >
-                      <span>Hariharan Babu (CEO)</span>
+                      <span>Dr. Hariharan Babu BE, MS, PhD (CEO)</span>
                       <ExternalLink className="w-3.5 h-3.5 opacity-70" />
                     </a>
                   </div>

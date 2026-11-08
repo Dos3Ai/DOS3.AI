@@ -62,6 +62,20 @@ export const Footer: React.FC = () => {
                 </a>
               </div>
 
+              {/* LinkedIn -> Company Page */}
+              <div className="flex items-center gap-2">
+                <Linkedin className="w-4 h-4 text-dos-cyan shrink-0" />
+                <a
+                  href={EXTERNAL_LINKS.companyLinkedIn}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-dos-cyan transition-colors inline-flex items-center gap-1 text-dos-cloud font-medium"
+                >
+                  <span>LinkedIn (DOS3.AI Company)</span>
+                  <ExternalLink className="w-3 h-3 opacity-60" />
+                </a>
+              </div>
+
               {/* LinkedIn -> CEO / Org Profile */}
               <div className="flex items-center gap-2">
                 <Linkedin className="w-4 h-4 text-dos-azure shrink-0" />
@@ -202,6 +216,16 @@ export const Footer: React.FC = () => {
             <Link to="/contact" className="hover:text-dos-cyan transition-colors">
               Contact
             </Link>
+            <a
+              href={EXTERNAL_LINKS.companyLinkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-dos-cyan transition-colors inline-flex items-center gap-1 text-dos-cyan"
+              aria-label="DOS3.AI LinkedIn Company Page"
+            >
+              <Linkedin className="w-3.5 h-3.5" />
+              <span>LinkedIn</span>
+            </a>
           </div>
         </div>
       </div>

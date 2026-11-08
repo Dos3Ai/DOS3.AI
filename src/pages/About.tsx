@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Compass, Target, Cpu, CheckCircle2, Shield, Wrench, Download, MapPin, Calendar, ExternalLink, Users } from 'lucide-react';
+import { ArrowRight, Compass, Target, Cpu, CheckCircle2, Shield, Wrench, Download, MapPin, Calendar, ExternalLink, Users, Linkedin } from 'lucide-react';
 import { Button } from '../components/Button';
 import { SectionHeading } from '../components/SectionHeading';
 import { TECHNOLOGY_PILLARS, COMPANY_INFO, EXTERNAL_LINKS, COMPANY_STATS } from '../data/content';
@@ -207,6 +207,16 @@ export const About: React.FC = () => {
             >
               <Calendar className="w-4 h-4" />
               <span>Schedule Architecture Session</span>
+            </a>
+            <a
+              href={EXTERNAL_LINKS.companyLinkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 rounded-xl bg-dos-surface hover:bg-dos-surfaceHover border border-dos-cyan/40 text-dos-cyan hover:text-white text-xs font-semibold flex items-center gap-2 transition-all shadow-sm"
+            >
+              <Linkedin className="w-4 h-4" />
+              <span>Follow DOS3.AI on LinkedIn</span>
+              <ExternalLink className="w-3.5 h-3.5 opacity-70" />
             </a>
             <a
               href={EXTERNAL_LINKS.dallasMaps}

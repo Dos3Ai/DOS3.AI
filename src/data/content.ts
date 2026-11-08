@@ -15,7 +15,7 @@ export const NAV_ITEMS: NavItem[] = [
 export const EXTERNAL_LINKS = {
   bookingSchedule: 'https://bookings.cloud.microsoft/bookwithme/user/00bd8674785944ee9c0ed8cfbf164de5@dos3.ai/meetingtype/Do-W11U4WU-0OxPctynXVg2?anonymous&ismsaljsauthenabled&ep=mcard',
   ceoLinkedIn: 'https://www.linkedin.com/in/hariharan-babu-hb/',
-  companyLinkedIn: 'https://www.linkedin.com/in/hariharan-babu-hb/',
+  companyLinkedIn: 'https://www.linkedin.com/company/dos3-ai',
   dallasMaps: 'https://maps.google.com/?q=Dallas,+Texas',
   orgMail: 'mailto:hello@dos3.ai',
   manualPdf: '/docs/DOS3AI_Architecture_Manual.pdf'
@@ -481,6 +481,7 @@ export const COMPANY_INFO = {
   tagline: 'Data • Operating Systems • Servers • Services • AI',
   legalName: 'DOS3.AI',
   location: 'Dallas, Texas, USA',
+  linkedin: EXTERNAL_LINKS.companyLinkedIn,
   emails: {
     general: 'hello@dos3.ai',
     business: 'hello@dos3.ai',
